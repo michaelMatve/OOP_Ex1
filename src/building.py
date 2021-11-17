@@ -12,9 +12,9 @@ class Building:
         self.elevators[elev.id]=elev
         self.numElev+=1
 
-    def load_json(self,file_name):
+    def load_json(self, file_name):
         try:
-            with open(file_name) as jasonFile:
+            with open(file_name, "r+") as jasonFile:
                 temp_dic=json.load(jasonFile)
                 self.minFloor=temp_dic["_minFloor"]
                 self.maxFloor = temp_dic["_maxFloor"]

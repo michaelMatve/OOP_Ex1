@@ -11,8 +11,8 @@ class Elevator:
         self.stopTime=stopTime
 
     def __str__(self):
-        return f"id: {self.id}, speed: {self.speed}, minFloor: {self.minFloor}, maxFloor: {self.maxFloor}, closeTime:{self.closeTime}, openTime: {self.openTime}, startTime: {self.startTime}, stopTime: {self.stopTime}"
+        return f"id: {self.id}, speed: {self.speed}, minFloor: {self.minFloor}, maxFloor: {self.maxFloor}, closeTime:{self.closeTime}, openTime: {self.openTime}, startTime: {self.startTime}, stopTime: {self.stopTime} \n"
 
     def __repr__(self):
-        return f"id: {self.id}, speed: {self.speed}, minFloor: {self.minFloor}, maxFloor: {self.maxFloor}, closeTime:{self.closeTime}, openTime: {self.openTime}, startTime: {self.startTime}, stopTime: {self.stopTime}"
+        return f"id: {self.id}, speed: {self.speed}, minFloor: {self.minFloor}, maxFloor: {self.maxFloor}, closeTime:{self.closeTime}, openTime: {self.openTime}, startTime: {self.startTime}, stopTime: {self.stopTime} \n"
 
