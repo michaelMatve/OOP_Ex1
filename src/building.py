@@ -14,17 +14,20 @@ class Building:
 
     def load_json(self,file_name):
         try:
-            with open(file_name) as jasonFail:
-                self.elevators = {}
-                temp_dic=json.load(jasonFail)
-                self.minFloor=temp_dic["minFloor"]
-                self.maxFloor = temp_dic["maxFloor"]
-                temp_elev=temp_dic["elevators"]
-                for k,e in temp_elev.item():
-                    elev=Elevator(id=e["id"],speed=["speed"],minFloore=["minFloore"],maxFloor=e["maxFloor"],closeTime=e["closeTime"],openTime=e["openTime"],startTime=e["startTime"],stopTime=e["stopTime"])
+            with open(file_name) as jasonFile:
+                temp_dic=json.load(jasonFile)
+                self.minFloor=temp_dic["_minFloor"]
+                self.maxFloor = temp_dic["_maxFloor"]
+                temp_elev=temp_dic["_elevators"]
+                for e in temp_elev:
+                    elev=Elevator(id=e["_id"],speed=["_speed"],minFloor=e["_minFloor"],maxFloor=e["_maxFloor"],closeTime=e["_closeTime"],openTime=e["_openTime"],startTime=e["_startTime"],stopTime=e["_stopTime"])
                     self.addElev(elev)
         except IOError as e:
             print("dont work")
+
+    def __str__(self):
+        return str(self.numElev)
+
 
 
 
