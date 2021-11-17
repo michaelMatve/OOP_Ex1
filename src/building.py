@@ -20,13 +20,13 @@ class Building:
                 self.maxFloor = temp_dic["_maxFloor"]
                 temp_elev=temp_dic["_elevators"]
                 for e in temp_elev:
-                    elev=Elevator(id=e["_id"],speed=["_speed"],minFloor=e["_minFloor"],maxFloor=e["_maxFloor"],closeTime=e["_closeTime"],openTime=e["_openTime"],startTime=e["_startTime"],stopTime=e["_stopTime"])
+                    elev=Elevator(id=e["_id"],speed=e["_speed"],minFloor=e["_minFloor"],maxFloor=e["_maxFloor"],closeTime=e["_closeTime"],openTime=e["_openTime"],startTime=e["_startTime"],stopTime=e["_stopTime"])
                     self.addElev(elev)
         except IOError as e:
             print("dont work")
 
     def __str__(self):
-        return str(self.numElev)
+        return f"minFloor:{self.minFloor}, maxFloor: {self.maxFloor},number of elevators: {self.numElev}, elevators: \n {self.elevators}"
 
 
 
