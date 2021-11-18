@@ -4,5 +4,6 @@ class DataStructure:
         self.floor = floor
         self.id = id
         self.direct = direct
-        self.call = call
         self.go_to_time = go_to_time
+        self.call = call
+

@@ -39,6 +39,27 @@ class Algo:
         return (change_time,temp_list)
 
     def addcall(self,calls_list:list, call:CallForElev):
+        if len(calls_list) == 1:
+            calls_list[0].floor = call.src
+            calls_list[0].id = 0
+            if call.dest - call.src > 0:
+                dir = 1
+            else:
+                if call.dest - call.src < 0:
+                    dir = -1
+                else:
+                    dir = 0
+            calls_list[1].direct = dir
+            calls_list[1].call = call
+            time =
+
+            calls_list[1].floor = call.dest
+            calls_list[1].id = 1
+            calls_list[1].direct = dir
+            calls_list[1].call = call
+
+
+
 
 
 
