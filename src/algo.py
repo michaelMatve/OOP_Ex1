@@ -13,7 +13,7 @@ class Algo:
 
     def CreatFile(self):
         for i in range(0,self.call_a.num_call):
-            self.call_a.calls[i].elev=1
+
         self.call_a.saveTocsv(self.out)
 
 
