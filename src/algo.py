@@ -11,11 +11,9 @@ class Algo:
         self.call_a.loadFromcsv(file_c)
         self.out=file_o
 
-    def CreatFile(self):
-        for i in range(0,self.call_a.num_call):
 
-        self.call_a.saveTocsv(self.out)
 
+    def addcall(self, calls_list:list, call:CallForElev):
 
 
 
