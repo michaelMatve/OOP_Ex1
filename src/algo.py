@@ -41,6 +41,7 @@ class Algo:
     def addcall(self,calls_list:list, call:CallForElev):
 
 
+
     def calcwaittime(self,t_list:list):
         total_wait=0.0
         for v in t_list:
