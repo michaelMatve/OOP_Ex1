@@ -1,6 +1,7 @@
 from building import Building
 from allCalls import AllCalls
 from callForElev import CallForElev
+from data_structure import DataStructure
 
 class Algo:
 
@@ -13,8 +14,8 @@ class Algo:
         self.elev_tarck= []
         self.elev_time = []
         for i in range(0,self.build_a.numElev):
-            self.elev_tarck.append([])
-            self.elev_time.append(0)
+            self.elev_tarck.append([DataStructure(floor=0,id=-1,direct=0,go_to_time=0)])
+            self.elev_time.append(0.0)
 
     def CreatFile(self):
         for i in self.call_a:
@@ -36,5 +37,19 @@ class Algo:
         temp_list = self.addcall(temp_list,call)
         change_time = self.calwaittime(temp_list)-self.elev_time[elev_i]
         return (change_time,temp_list)
+
+    def addcall(self,calls_list:list, call:CallForElev):
+
+
+    def calcwaittime(self,t_list:list):
+        total_wait=0.0
+        for v in t_list:
+            if(v.id==1):
+                total_wait+=v.call
+
+
+
+
+    def calclate(self,t_list:list,index_elev:int,index_change:int,type:int):
 
 
