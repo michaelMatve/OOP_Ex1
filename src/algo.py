@@ -41,15 +41,24 @@ class Algo:
     def addcall(self,calls_list:list, call:CallForElev):
 
 
+
     def calcwaittime(self,t_list:list):
         total_wait=0.0
         for v in t_list:
-            if(v.id==1):
-                total_wait+=v.call
-
-
+            if v.id==1:
+                total_wait+=v.go_to_time-v.call.time
+        return total_wait
 
 
     def calclate(self,t_list:list,index_elev:int,index_change:int,type:int):
+        if type==-1:
+            for v in range(index_change+1,len(t_list)):
+                t_list[v].go_to_time+=self.build_a.elevators[index_elev].timefloor()
+        else:
+            time_change= (abs(t_list[index_change].floor-t_list[index_change+1].floor))/self.build_a.elevators[index_elev].spead
+            time_change+=self.build_a.elevators[index_elev].timefloor()
+            for x in range(index_change+1,len(t_list)):
+                t_list[x].go_to_time +=time_change
+
 
 
