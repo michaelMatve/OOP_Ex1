@@ -19,7 +19,7 @@ class AllCalls:
         for x in self.calls:
             temp_arr.append(x.__dict__.values())
         try:
-            with open(file_name, 'w') as newCsv:
+            with open(file_name, 'w', newline="") as newCsv:
                 newWrite=csv.writer(newCsv)
                 newWrite.writerows(temp_arr)
         except IOError as e:
