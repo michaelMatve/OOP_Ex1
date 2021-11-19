@@ -40,6 +40,8 @@ class Algo:
 
     def addcall(self,calls_list:list, call:CallForElev):
         i = 0
+        flag1=False
+        flag2=False
         while i < len(calls_list):
             if calls_list[i].go_to_time > call.time:
                 break
@@ -55,13 +57,16 @@ class Algo:
                         if call.src > calls_list[i].floor:
                             if calls_list[i].direct == -1:
                                 #add
+                                flag1 = True
                                 break
                             i += 1
                         else:
                             if call.src == calls_list[i].floor:
+                                flag1 = True
                                 break
                             if go_to_time(calls_list[i]) > call.time:
                                 #add
+                                flag1 = True
                                 break
                             i += 1
                 else:
@@ -71,18 +76,65 @@ class Algo:
                         if call.src < calls_list[i].floor:
                             if calls_list[i].direct == 1:
                                 #add
+                                flag1 = True
                                 break
                             i += 1
                         else:
                             if call.src == calls_list[i].floor:
+                                flag1 = True
                                 break
                             if go_to_time(calls_list[i]) > call.time:
                                 #add
+                                flag1 = True
                                 break
                             i += 1
 
         while i < len(calls_list):
+            if calls_list[i - 1].direct == 0:
+                i += 1
+            else:
+                if calls_list[i - 1].direct == 1:
+                    if call.src <= calls_list[i - 1].floor:  # note
+                        i += 1
+                    else:
+                        if call.src > calls_list[i].floor:
+                            if calls_list[i].direct == -1:
+                                # add
+                                flag2 = True
+                                break
+                            i += 1
+                        else:
+                            if call.src == calls_list[i].floor:
+                                flag2 = True
+                                break
+                            flag2 = True
+                            # add
+                            break
+                else:
+                    if call.src >= calls_list[i - 1].floor:  # note
+                        i += 1
+                    else:
+                        if call.src < calls_list[i].floor:
+                            if calls_list[i].direct == 1:
+                                flag2 = True
+                                # add
+                                break
+                            i += 1
+                        else:
+                            if call.src == calls_list[i].floor:
+                                flag2 = True
+                                break
+                            flag2 = True
+                            # add
+                            break
 
+        if flag1==False:
+            addsrc
+        if flag2==False:
+            adddest
+
+
+        return calls_list
 
 
 
