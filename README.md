@@ -21,3 +21,6 @@ more detailed algorithm: </br>
 6. the algorithm will stop running on the other calls when the algorithm will add more calls than the ratio, or when the algorithm is done running on all the calls.
 7. then, the algorithm will check the next call, until it will get to the last one.
 
+## UML
+
+[https://github.com/michaelMatve/OOP_Ex1/blob/main/Uml.png?raw=true]
