@@ -18,7 +18,7 @@ class Algo:
             self.ratio=0
         else:
             self.ratio = int(self.call_a.num_call/(self.build_a.numElev*self.build_a.numElev*(self.build_a.numElev-1)))
-        for i in range(0,self.build_a.numElev):
+        for i in range(0, self.build_a.numElev):
             self.elev_order.append([])
             self.elev_times.append(0)
 
