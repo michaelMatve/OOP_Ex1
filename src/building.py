@@ -17,7 +17,7 @@ class Building:
     def load_json(self, file_name):
         try:
             with open(file_name, "r+") as jasonFile:
-                temp_dic=json.load(jasonFile)
+                temp_dic = json.load(jasonFile)
                 self.minFloor=temp_dic["_minFloor"]
                 self.maxFloor = temp_dic["_maxFloor"]
                 temp_elev=temp_dic["_elevators"]

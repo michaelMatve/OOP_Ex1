@@ -56,7 +56,7 @@ class Algo:
                     self.elev_order[elev_number].append(self.call_a.calls[i].src)
                     self.elev_order[elev_number].append(self.call_a.calls[i].dest)
 
-                flage=True
+                flage = True
                 counter = 0
                 while flage:
                     flage = False

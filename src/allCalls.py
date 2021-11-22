@@ -3,7 +3,7 @@ from callForElev import CallForElev
 class AllCalls:
     def __init__(self):
         self.calls = []
-        self.num_call=0
+        self.num_call = 0
 
     def loadFromcsv(self,file_name):
         try:

@@ -3,7 +3,7 @@
 class CallForElev:
     def __init__(self,time:float,src:int,dest:int,status:int,elev:int):
         self.name = "Elevator call"
-        self.time=float(time)
+        self.time = float(time)
         self.src=int(src)
         self.dest=int(dest)
         self.status=int(status)
