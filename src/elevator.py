@@ -12,6 +12,7 @@ class Elevator:
 
     def timefloor(self):
         return self.stopTime+self.startTime+self.openTime+self.closeTime
+
     def __str__(self):
         return f"id: {self.id}, speed: {self.speed}, minFloor: {self.minFloor}, maxFloor: {self.maxFloor}, closeTime:{self.closeTime}, openTime: {self.openTime}, startTime: {self.startTime}, stopTime: {self.stopTime} \n"
 
