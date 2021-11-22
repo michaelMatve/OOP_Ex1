@@ -14,7 +14,6 @@ class CallForElev:
 
     def __repr__(self):
         return f"name: {self.name}, time: {self.time}, src: {self.src}, dest: {self.dest}, status: {self.status}, elev: {self.elev} \n"
-
     def state_of_call(self) -> int:
         state = 0
         if self.dest - self.src > 0:

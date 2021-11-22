@@ -12,7 +12,7 @@ if __name__ == '__main__':
                 test = Algo(sys.argv[1],sys.argv[2],sys.argv[3])
                 test.CreatFile()
         else:
-                test = Algo("B5.json","Calls_b.csv","out.csv")
+                test = Algo("B2.json","Calls_a.csv","test_output.csv")
                 test.CreatFile()
 
 

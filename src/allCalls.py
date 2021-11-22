@@ -14,6 +14,7 @@ class AllCalls:
                     self.addCall(temp_call)
         except IOError as e:
             print("csv fail")
+
     def saveTocsv(self,file_name):
         temp_arr= []
         for x in self.calls:

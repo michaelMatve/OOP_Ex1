@@ -95,6 +95,7 @@ class Algo:
                 i += 1
         time += self.elev_times[elev_index]
         return time
+
     def addcall(self,dir:int,elev_index:int,call:CallForElev):
         i = 1
         if dir == 1:
@@ -110,6 +111,7 @@ class Algo:
             while (i < len( self.elev_order[elev_index]))and(self.elev_order[elev_index][i] > call.dest):
                 i+=1
             self.elev_order[elev_index].insert(i, call.dest)
+
     def calcfinishtime(self,elev_index:int):
         if len(self.elev_order[elev_index])== 0:
             return 0
