@@ -1,0 +1,77 @@
+@startuml
+
+class Building {
+    +elevators:dict
+    +minFloor:int
+    +maxFloor:int
+    +numElev:int
+
+    -def addElev(self,elev:Elevator)
+    -def load_json(self, file_name)
+    -def __str__(self)
+}
+
+class Elevator {
+    +id:int
+    +speed:double
+    +minFloor:int
+    +maxFloor:int
+    +closeTime:double
+    +openTime:double
+    +startTime:double
+    +stopTime:double
+
+    -def timefloor(self)
+    -def __str__(self)
+    -def __repr__(self)
+}
+
+class AllCalls {
+    +calls:list
+    +num_call:int
+
+    -def loadFromcsv(self,file_name)
+    -def saveTocsv(self,file_name)
+    -def addCall(self,tcall:CallForElev)
+    -def __str__(self)
+}
+
+class CallForElev {
+    +name:str
+    +time:double
+    +src:int
+    +dest:int
+    +status:int
+    +elev:int
+
+    -def __str__(self)
+    -def __repr__(self)
+    -def state_of_call(self)
+}
+
+class Algo {
+    +build_a:Building
+    +call_a:AllCalls
+    +out:str
+    +elev_order:list
+    +elev_times:list
+    +ratio:double
+
+    -def CreatFile(self)
+    -def calctime(self,dir:int,elev_index:int,call:CallForElev)
+    -def addcall(self,dir:int,elev_index:int,call:CallForElev)
+    -def calcfinishtime(self,elev_index:int)
+}
+
+Elevator --> Building
+Building --> Algo
+AllCalls --> Algo
+CallForElev --> AllCalls
+CallForElev --> Algo
+csv --> CallForElev
+json ---> Building
+Algo --> Ex1
+sys -----> Ex1
+
+@enduml
+
