@@ -18,8 +18,14 @@ class Algo:
             self.elev_times.append(0)
 
     def CreatFile(self):
-        elev_number=0
         for i in range (0,self.call_a.num_call):
+            elev_number=0
+            best_time_finish= self.calcfinishtime(elev_number)
+            for t in range (1,len(self.elev_times)):
+                temp_time_finish=self.calcfinishtime(t)
+                if best_time_finish>temp_time_finish:
+                    best_time_finish=temp_time_finish
+                    elev_number=t
             if(self.call_a.calls[i].elev==-1):
                 self.call_a.calls[i].elev=elev_number
                 not_add_yet=True
@@ -54,7 +60,7 @@ class Algo:
                 while flage:
                     flage = False
                     for m in range(i+1,self.call_a.num_call):
-                        if counter < 1 :
+                        if counter < 3:
                             dir = -1
                             if self.elev_order[elev_number][-1] > self.elev_order[elev_number][0]:
                                 dir = 1
@@ -73,7 +79,6 @@ class Algo:
                                         self.call_a.calls[m].elev=elev_number
                                         flage = True
                                         counter += 1
-                elev_number=(elev_number+1)%self.build_a.numElev
         self.call_a.saveTocsv(self.out)
 
     def calctime(self,dir:int,elev_index:int,call:CallForElev):
