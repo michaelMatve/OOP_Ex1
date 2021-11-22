@@ -8,4 +8,4 @@ https://www.kone.co.il/he/Images/brochure-kone-destination_tcm203-18639.pdf
 https://www.cs.huji.ac.il/~ai/projects/2014/The_intelevator/files/report.pdf </br>
 
 ### Algorithm
-First, we decided to create classes that will help us write the main algorithm, which will allocate an elevator to each and every call 
+First, we decided to create classes that will help us write the main algorithm, which will allocate an elevator to each and every call hbh 
